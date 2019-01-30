@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AAWeb - {% block title "Title Page" %}</title>
+    <title>AAWeb</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/app.css">
     <style>
         body {
             padding-top: 5rem;
@@ -28,18 +30,36 @@
         </div>
     </nav>
 </header>
+<?php 
+    $text = "img.dds";
+    $text=rtrim($text,".dds");
+    // echo $text;
+ ?>
 <main role="main">
     <div class="container">
-        <div class="row">
-
-            <div class="col-md-8">
-                    <div class="alert alert-danger">
-                    </div>
-                    <div class="alert alert-success">
-                    </div>
-            </div>
-            <aside class="col-md-4 blog-sidebar">
-            </aside>
+        <h1>Серьги</h1>
+        <br>
+        <div class="row" style="margin: 0">
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Item ID</th>
+                        <th>Название</th>
+                        <th>Name</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($items as $item)
+                    <tr>
+                        <td>{{ $item['id'] }}</td>
+                        <td>{{ $item['ru'] }}</td>
+                        <td>{{ $item['en_us']}}</td>
+                        <td>{{ $item['price'] }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </main>
@@ -50,8 +70,12 @@
 <script type="text/javascript" src="/js/bootstrap.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.locales.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
 <script>
     timeago().render(document.querySelectorAll('.timeago'), 'en')
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
 </script>
 </body>
 </html>

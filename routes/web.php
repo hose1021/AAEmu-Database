@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-	$data=DB::select("SELECT * FROM items");
-	$result = json_decode(json_encode($data,true), true);
-	foreach ($result as $item) {
-		echo $item['name'] . '<br>';
-	}
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@view');
+
+Route::get('/items', 'ItemsController@view');
