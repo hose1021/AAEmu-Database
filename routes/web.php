@@ -12,5 +12,3 @@
 */
 
 Route::get('/', 'WelcomeController@view');
-
-Route::get('/items', 'ItemsController@view');
