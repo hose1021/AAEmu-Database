@@ -8,7 +8,5 @@
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script>
     timeago().render(document.querySelectorAll('.timeago'), 'en')
-    $(document).ready(function() {
-        $('#example').DataTable();
-    } );
+    @yield('javascripts')
 </script>
