@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', 'WelcomeController@view');
+Route::get('/welcome', 'WelcomeController@view');
+
+Route::get('/', 'HomeController@view');
