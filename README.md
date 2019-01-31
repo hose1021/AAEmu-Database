@@ -2,7 +2,6 @@
 
 __Open source web-site based on Laravel for ArcheAge__
 [![Chat on Discord](https://img.shields.io/discord/479677351618281472.svg?colorB=%237289da&label=Discord&logo=Discord&style=flat-square)](https://discord.gg/X8xhJEd)
-[![Published in Bioinformatics](https://img.shields.io/badge/Published%20in-Bioinformatics-167DA4.svg)](https://doi.org/10.1093/bioinformatics/btw753)
 ### Setup, help & support, FAQs
 If you don't find what you're looking for there, [talk to a human](https://discord.gg/X8xhJEd). Please do not use our issue tracker for support requests.
 
