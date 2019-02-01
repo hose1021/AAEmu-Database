@@ -1,6 +1,7 @@
 @extends('layout.main')
 
 @section('title') Items | AAWeb @stop
+
 @section('content')
 <main role="main">
     <div class="container">
@@ -15,24 +16,62 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($items as $item)
-                    <tr>
-                        <td>{{ $item['id'] }}</td>
-                        <td><img src="../icons/<?=substr_replace($item['filename'], '', -4)?>.png" alt=""></td>
-                        <td>{{ $item['ru'] }}</td>
-                        <td>{{ $item['en_us']}}</td>
-                    </tr>
-                    @endforeach
+
                 </tbody>
             </table>
         </div>
     </div>
 </main>
 @stop
+
 @section('javascripts')
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
-</script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#example').DataTable({
+                "ajax": {
+                    url: "{{route('post_all_items')}}",
+                    type: "POST",
+                    dataSrc : 'data',
+                },
+                columns: [
+                    {
+                        data: 'id',
+                        'defaultContent' : "<i>error</i>"
+                    },
+                    {
+                        data: 'filename',
+                        defaultContent : "<i>error</i>",
+                    },
+                    {
+                        data: 'ru',
+                        'defaultContent' : "<i>error</i>"
+                    },
+                    {
+                        data: 'en_us',
+                        'defaultContent' : "<i>error</i>"
+                    }
+                ],
+                columnDefs: [ {
+                    targets: 1,
+                    render: function ( data, type, row ) {
+                        if(data !== null){
+                            return '<img src="/img/icons/'+data.slice(0, -4)+'.png" />';
+                        }
+                        else
+                            return null;
+                    }
+                } ]
+            });
+
+
+
+
+
+        });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 @endsection

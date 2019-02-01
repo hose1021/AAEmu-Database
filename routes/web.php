@@ -12,6 +12,7 @@
 */
 
 Route::get('/items/all', 'ItemsController@view')->name('all_items');
+Route::post('/items/all', 'ItemsController@List')->name('post_all_items');
 
 Route::get('/', 'HomeController@view');
 
