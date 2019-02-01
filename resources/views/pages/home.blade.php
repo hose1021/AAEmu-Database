@@ -25,6 +25,12 @@
       </li>
       <li class="list-group-item d-flex justify-content-between lh-condensed">
         <div>
+          <h6 class="my-0">Server version</h6>
+        </div>
+        <h6 class="my-0"><span class="badge badge-primary my-0">0.0.1.2</span></h6>
+      </li>
+      <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
           <h6 class="my-0">Discord</h6>
           <small class="text-muted">Community Discord server</small>
         </div>
