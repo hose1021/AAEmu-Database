@@ -29,9 +29,12 @@
 
 @section('javascripts')
 <script>
-    timeago().render(document.querySelectorAll('.timeago'), 'en')
     $(document).ready(function() {
-        $('#example').DataTable();
+        $('#example').DataTable( {
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Russian.json"
+            }
+        } );
     });
 </script>
 @endsection

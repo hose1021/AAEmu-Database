@@ -31,7 +31,6 @@
 @stop
 @section('javascripts')
 <script>
-    timeago().render(document.querySelectorAll('.timeago'), 'en')
     $(document).ready(function() {
         $('#example').DataTable();
     });

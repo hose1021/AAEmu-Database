@@ -20,19 +20,19 @@ class NpcsController extends Controller
     public function npcs(int $gradeId = null, int $zoneId = null)
     {
         $npcs = $this->list($gradeId, $zoneId);
-        return view('npcs/all', compact('npcs'));
+        return view('pages/npcs/all', compact('npcs'));
     }
 
     public function travel()
     {
         $npcs = $this->List(null, null, 1);
-        return view('npcs/all', compact('npcs'));
+        return view('pages/npcs/all', compact('npcs'));
     }
 
     public function battlepets()
     {
         $npcs = $this->List(null, null, 2);
-        return view('npcs/all', compact('npcs'));
+        return view('pages/npcs/all', compact('npcs'));
     }
 
     /**

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/items/all', 'ItemsController@view');
+Route::get('/items/all', 'ItemsController@view')->name('all_items');
 
 Route::get('/', 'HomeController@view');
 

@@ -12,7 +12,7 @@
           <a href="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
-          <a href="/items/all" class="nav-link">Items</a>
+          <a href="{{ route('all_items') }}" class="nav-link">Items</a>
         </li>
         <li class="nav-item">
           <a href="/npcs/all" class="nav-link">Npcs</a>
