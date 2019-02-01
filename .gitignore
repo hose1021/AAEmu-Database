@@ -1,3 +1,4 @@
 vendor/
 icons/
 db/decrypted.sqlite3
+public/icons

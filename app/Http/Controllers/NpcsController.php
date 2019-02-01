@@ -23,7 +23,7 @@ class NpcsController extends Controller
         $data = DB::table('npcs')
             ->select('npcs.id', 'npcs.level', 'npcs.npc_grade_id', 'en_us', 'ru')
             ->leftJoin('localized_texts', 'localized_texts.idx', '=', 'npcs.id')
-            ->where('tbl_name', 'npcs')->where('ru', '<>', '')
+            ->where('tbl_name', 'npcs')->where('en', '<>', '')
             ->get();
         return json_decode(json_encode($data, true), true);
     }
