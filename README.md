@@ -21,6 +21,7 @@ If you don't find what you're looking for there, [talk to a human](https://disco
 
 ## Screenshot
 ![](http://ipic.su/img/img7/fs/kiss_57kb.1548917395.png)
+![](http://ipic.su/img/img7/fs/kiss_54kb.1549038655.png)
 ### Can I contribute?
 Yes you can! Contributions are welcomed provided that they comply with our [Contributing Guidelines](CONTRIBUTING.md). Please ensure you read the relevant sections of the guidelines carefully before making a Pull Request or opening an Issue.
 
