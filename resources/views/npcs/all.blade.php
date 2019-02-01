@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{ $npc['id'] }}</td>
                     <td></td>
-                    <td>{{$npc['ru']}}</td>
+                    <td>{{$npc['en_us']}}</td>
                     <td>{{$npc['level']}}</td>
                     <td>{{$npc['npc_grade_id']}}</td>
                 </tr>
@@ -30,7 +30,9 @@
 @endsection
 
 @section('javascripts')
+    <script>
     $(document).ready(function() {
         $('#example').DataTable();
     });
+    </script>
 @endsection
