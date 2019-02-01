@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 <head>
-  @include('includes.head')
+    @include('includes.head')
 </head>
 <body>
-  <header>
+<header>
     @include('includes.header')
-  </header>
-  @yield('content')
+</header>
+@yield('content')
 </body>
 @include('includes.footer')
 </html>

@@ -8,7 +8,5 @@
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="{{ asset('/js/bootstrap.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.locales.min.js"></script>
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 @yield('javascripts')
