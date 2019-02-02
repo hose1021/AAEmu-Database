@@ -24,10 +24,15 @@ body {
 
 .dataTables_wrapper{
 	width: 100%;
+    padding: 30px 0;
 }
 
 .dropdown-submenu {
     position: relative;
+}
+
+.dropdown-item{
+    cursor: pointer;
 }
 
 .dropdown-submenu> a:after {

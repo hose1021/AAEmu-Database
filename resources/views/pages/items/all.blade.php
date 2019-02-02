@@ -6,6 +6,118 @@
     <main role="main">
         <div class="container">
             <div class="row" style="margin: 0">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" tabindex="-1" href="#">
+                                    Weapons
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item" tabindex="-1" href="#">
+                                            1H Weapon
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" id="69">Dagger</a></li>
+                                            <li><a class="dropdown-item" id="70">Sword</a></li>
+                                            <li><a class="dropdown-item" id="72">Katana</a></li>
+                                            <li><a class="dropdown-item" id="73">Axe</a></li>
+                                            <li><a class="dropdown-item" id="74">Club</a></li>
+                                            <li><a class="dropdown-item" id="75">Scepter</a></li>
+                                            <li><a class="dropdown-item" id="76">Shortspear</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item" tabindex="-1" href="#">
+                                            2H Weapon
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" tabindex="-1" id="127">Greatsword</a></li>
+                                            <li><a class="dropdown-item" id="128">Nodachi</a></li>
+                                            <li><a class="dropdown-item" id="129">Greataxe</a></li>
+                                            <li><a class="dropdown-item" id="130">Greatclub</a></li>
+                                            <li><a class="dropdown-item" id="131">Staff</a></li>
+                                            <li><a class="dropdown-item" id="132">Longspear</a></li>
+                                        </ul>
+                                    </li>
+                                    {{--<li class="dropdown-submenu">--}}
+                                        {{--<a class="dropdown-item" tabindex="-1" href="#">--}}
+                                            {{--Instruments--}}
+                                        {{--</a>--}}
+                                        {{--<ul class="dropdown-menu">--}}
+                                            {{--<li><a class="dropdown-item" tabindex="-1" href="#">Lute</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Flute</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Drum</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                    {{--<li><a class="dropdown-item" href="#">Bow</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item dropdown">--}}
+                                {{--<a class="nav-link dropdown-toggle" tabindex="-1" href="#">--}}
+                                    {{--Armor--}}
+                                {{--</a>--}}
+                                {{--<ul class="dropdown-menu">--}}
+                                    {{--<li class="dropdown-submenu">--}}
+                                        {{--<a class="dropdown-item" tabindex="-1" href="#">--}}
+                                            {{--Cloth--}}
+                                        {{--</a>--}}
+                                        {{--<ul class="dropdown-menu">--}}
+                                            {{--<li><a class="dropdown-item" tabindex="-1" href="#">Head</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Chest</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Waist</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Wrists</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Hands</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Legs</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Feet</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="dropdown-submenu">--}}
+                                        {{--<a class="dropdown-item" tabindex="-1" href="#">--}}
+                                            {{--Leather--}}
+                                        {{--</a>--}}
+                                        {{--<ul class="dropdown-menu">--}}
+                                            {{--<li><a class="dropdown-item" tabindex="-1" href="#">Head</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Chest</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Waist</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Wrists</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Hands</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Legs</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Feet</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="dropdown-submenu">--}}
+                                        {{--<a class="dropdown-item" tabindex="-1" href="#">--}}
+                                            {{--Plate--}}
+                                        {{--</a>--}}
+                                        {{--<ul class="dropdown-menu">--}}
+                                            {{--<li><a class="dropdown-item" tabindex="-1" href="#">Head</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Chest</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Waist</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Wrists</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Hands</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Legs</a></li>--}}
+                                            {{--<li><a class="dropdown-item" href="#">Feet</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                    {{--<li><a class="dropdown-item" href="#">Cloak</a></li>--}}
+                                    {{--<li><a class="dropdown-item" href="#">Shield</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item dropdown">--}}
+                                {{--<a class="nav-link dropdown-toggle" tabindex="-1" href="#">--}}
+                                    {{--Accessories--}}
+                                {{--</a>--}}
+                                {{--<ul class="dropdown-menu">--}}
+                                    {{--<li><a class="dropdown-item" tabindex="-1" href="#">Earrings</a></li>--}}
+                                    {{--<li><a class="dropdown-item" href="#">Necklace</a></li>--}}
+                                    {{--<li><a class="dropdown-item" href="#">Ring</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                        </ul>
+                    </div>
+                </nav>
                 <table id="example" class="display" style="width:100%">
                     <thead>
                     <tr>
@@ -80,7 +192,7 @@
                     },
                     {
                         data: 'filename',
-                        defaultContent: "<i>error</i>",
+                        defaultContent: "<img src='/img/empty.png\' />",
                     },
                     {
                         data: 'ru',
@@ -95,7 +207,7 @@
                     targets: 1,
                     render: function (data, type, row) {
                         if (data !== null) {
-                            return '<img src="/img/icons/' + data.slice(0, -4) + '.png" />';
+                            return '<img src="/img/' + data.slice(0, -4) + '.png" />';
                         } else
                             return null;
                     }

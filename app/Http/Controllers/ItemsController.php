@@ -35,6 +35,14 @@ class ItemsController extends Controller
     public function List()
     {
         $items = $this->itemRepository->getAll()->get();
+        $items = json_decode(json_encode($items, true), true);
+        for ($i=0;$i<count($items);$i++){
+            if(file_exists('./img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
+                $items[$i]['filename']='icons/'.$items[$i]['filename'];
+            else {
+                $items[$i]['filename']="empty.png";
+            }
+        }
         $items = [
             'data' => $items
         ];
