@@ -1,18 +1,15 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/items/all', 'ItemsController@view')->name('all_items');
-Route::post('/items/all', 'ItemsController@List')->name('post_all_items');
+Route::group(['prefix' => 'items'], function () {
+    //GET All items
+    Route::get('/', 'ItemsController@view')->name('all_items');
+
+    Route::post('category/{id}', 'ItemsController@ShowItemByCategory')->where('id', '[0-9]+')->name('category_items');
+
+    Route::post('all', 'ItemsController@List')->name('post_all_items');
+});
+
 
 Route::get('/', 'HomeController@view');
 

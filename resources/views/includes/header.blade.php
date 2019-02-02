@@ -14,7 +14,7 @@
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                     <li class="dropdown-submenu">
-                        <a class="dropdown-item" tabindex="-1" href="#">
+                        <a class="dropdown-item" tabindex="-1" href="{{route('all_items')}}">
                             Item
                         </a>
                         <ul class="dropdown-menu">
@@ -28,13 +28,13 @@
                                             1H Weapon
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" tabindex="-1" href="#">Dagger</a></li>
-                                            <li><a class="dropdown-item" href="#">Sword</a></li>
-                                            <li><a class="dropdown-item" href="#">Katana</a></li>
-                                            <li><a class="dropdown-item" href="#">Axe</a></li>
-                                            <li><a class="dropdown-item" href="#">Club</a></li>
-                                            <li><a class="dropdown-item" href="#">Scepter</a></li>
-                                            <li><a class="dropdown-item" href="#">Shortspear</a></li>
+                                            <li><a class="dropdown-item" id="69">Dagger</a></li>
+                                            <li><a class="dropdown-item" id="70">Sword</a></li>
+                                            <li><a class="dropdown-item" id="72">Katana</a></li>
+                                            <li><a class="dropdown-item" id="73">Axe</a></li>
+                                            <li><a class="dropdown-item" id="74">Club</a></li>
+                                            <li><a class="dropdown-item" id="75">Scepter</a></li>
+                                            <li><a class="dropdown-item" id="76">Shortspear</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown-submenu">
@@ -42,12 +42,12 @@
                                             2H Weapon
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" tabindex="-1" href="#">Greatsword</a></li>
-                                            <li><a class="dropdown-item" href="#">Nodachi</a></li>
-                                            <li><a class="dropdown-item" href="#">Greataxe</a></li>
-                                            <li><a class="dropdown-item" href="#">Greatclub</a></li>
-                                            <li><a class="dropdown-item" href="#">Staff</a></li>
-                                            <li><a class="dropdown-item" href="#">Longspear</a></li>
+                                            <li><a class="dropdown-item" tabindex="-1" id="127">Greatsword</a></li>
+                                            <li><a class="dropdown-item" id="128">Nodachi</a></li>
+                                            <li><a class="dropdown-item" id="129">Greataxe</a></li>
+                                            <li><a class="dropdown-item" id="130">Greatclub</a></li>
+                                            <li><a class="dropdown-item" id="131">Staff</a></li>
+                                            <li><a class="dropdown-item" id="132">Longspear</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown-submenu">

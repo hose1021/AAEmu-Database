@@ -2,25 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use App\Repositories\ItemRepository;
 
 class ItemsController extends Controller
 {
+
+
+    /**
+     * @var ItemRepository
+     */
+    private $itemRepository;
+
+    public function __construct(ItemRepository $itemRepository)
+    {
+        $this->itemRepository = $itemRepository;
+    }
+
     public function view()
     {
     	return view('pages.items.all');
     }
 
+    public function ShowItemByCategory($category)
+    {
+        $items = $this->itemRepository->getAllForCategory($category)->get()->all();
+        $items = [
+            'data' => $items
+        ];
+        return json_encode($items);
+    }
+
     public function List()
     {
-        $items = DB::table('items')->select('items.id', 'icons.filename',  'tbl_name', 'tbl_column_name', 'ru', 'en_us', 'price')
-            ->leftJoin('localized_texts', 'localized_texts.idx', '=', 'items.id')
-            ->leftJoin('icons', 'items.icon_id', '=', 'icons.id')
-            ->where('tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->orderBy('items.id');
+        $items = $this->itemRepository->getAll()->get();
         $items = [
-            'data' => $items->get()->all()
+            'data' => $items
         ];
-
         return json_encode($items);
     }
 }
