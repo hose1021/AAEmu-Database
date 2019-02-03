@@ -37,8 +37,8 @@ class ItemsController extends Controller
         $items = $this->itemRepository->getAll()->get();
         $items = json_decode(json_encode($items, true), true);
         for ($i=0;$i<count($items);$i++){
-            if(file_exists( public_path() . '/img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
-                $items[$i]['filename']='icons/'.$items[$i]['filename'];
+            if(false !== stream_resolve_include_path( public_path() . '/img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
+                $items[$i]['filename']='/icons/'.$items[$i]['filename'];
             else {
                 $items[$i]['filename']="empty.png";
             }
@@ -51,15 +51,11 @@ class ItemsController extends Controller
 
     public function test()
     {
-        $items = $this->itemRepository->getAll()->get();
-        $items = json_decode(json_encode($items, true), true);
-        for ($i=0;$i<count($items);$i++){
-            if(file_exists( public_path() . '/img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
-                echo 'icons/'.$items[$i]['filename'];
-            else {
-                echo "empty.png";
-            }
-        }
+        // $item = DB::connection('sqlite')->table('items')->select('items.id', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename')
+        //     ->leftJoin('icons', 'items.icon_id', '=', 'icons.id')
+        //     ->leftJoin('localized_texts', 'localized_texts.idx', '=', 'items.id')
+        //     ->where('localized_texts.tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->latest();
+        // // $users = DB::connection('mysql')->table('users')->select('username')->get();
     }
 }
 
