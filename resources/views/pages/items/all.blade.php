@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row" style="margin: 0">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="collapse navbar-collapse">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" tabindex="-1" href="#">
@@ -207,7 +207,7 @@
                     targets: 1,
                     render: function (data, type, row) {
                         if (data !== null) {
-                            return '<img src="/img/' + data.slice(0, -4) + '.png" />';
+                            return '<img src="{{ asset('img/') }}' + data.slice(0, -4) + '.png" />';
                         } else
                             return null;
                     }

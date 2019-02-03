@@ -25,6 +25,11 @@
                     </ul>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/reg" class="nav-link">Registration</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

@@ -10,6 +10,7 @@ Route::group(['prefix' => 'items'], function () {
     Route::post('all', 'ItemsController@List')->name('post_all_items');
 });
 
+Route::get('/test', 'ItemsController@test');
 
 Route::get('/', 'HomeController@view');
 

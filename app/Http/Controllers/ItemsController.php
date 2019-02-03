@@ -20,7 +20,7 @@ class ItemsController extends Controller
 
     public function view()
     {
-    	return view('pages.items.all');
+        return view('pages.items.all');
     }
 
     public function ShowItemByCategory($category)
@@ -37,7 +37,7 @@ class ItemsController extends Controller
         $items = $this->itemRepository->getAll()->get();
         $items = json_decode(json_encode($items, true), true);
         for ($i=0;$i<count($items);$i++){
-            if(file_exists('./img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
+            if(file_exists( public_path() . '/img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
                 $items[$i]['filename']='icons/'.$items[$i]['filename'];
             else {
                 $items[$i]['filename']="empty.png";
@@ -46,7 +46,20 @@ class ItemsController extends Controller
         $items = [
             'data' => $items
         ];
-        return json_encode($items);
+        return $items;
+    }
+
+    public function test()
+    {
+        $items = $this->itemRepository->getAll()->get();
+        $items = json_decode(json_encode($items, true), true);
+        for ($i=0;$i<count($items);$i++){
+            if(file_exists( public_path() . '/img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
+                echo 'icons/'.$items[$i]['filename'];
+            else {
+                echo "empty.png";
+            }
+        }
     }
 }
 
