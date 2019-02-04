@@ -12,7 +12,7 @@ Route::group(['prefix' => 'items'], function () {
 
 Route::get('/test', 'ItemsController@test');
 
-Route::get('/', 'HomeController@view');
+Route::get('/', 'WelcomeController@view');
 
 Route::group(['prefix' => 'npcs'], function () {
     //All npcs
@@ -28,3 +28,7 @@ Route::group(['prefix' => 'npcs'], function () {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -3,19 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
 
 class HomeController extends Controller
 {
-    public function view()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-    	// $opts = ['http' => ['method' => 'GET', 'header' => ['User-Agent: PHP']]];
-     //    $context = stream_context_create($opts);
-     //    $json = file_get_contents("https://api.github.com/repos/atel0/AAEmu/commits", false, $context);
-     //    $obj = json_decode($json, true);
-     //    $obj=array_slice($obj,0,3);
-    	$users=DB::connection('mysql')->table('users')->count();
-    	return view('pages.home', ['users' => $users]);
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 }
-

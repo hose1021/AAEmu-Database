@@ -28,7 +28,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+
+    protected $last_ip = '127.0.0.1';
 
     /**
      * Create a new controller instance.
@@ -64,9 +66,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'username' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => base64_encode(hash('sha256', $data['password'], true)),
+            'last_ip' => $this->last_ip,
         ]);
     }
 }

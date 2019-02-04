@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password','last_ip'
     ];
 
     /**
@@ -25,6 +25,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password'
     ];
+
+//     public function setPasswordAttribute($value){
+//         $this->attributes['password'] = base64_encode(hash('sha256', $value, true));
+//     }
 }
