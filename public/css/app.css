@@ -6,12 +6,30 @@ html {
 }
 
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
   background: #f5f5f5;
 }
 
-.client{
-	float: right;
+.navbar{
+  background: #333;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-brand{
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 0rem;
+}
+
+.nav-item:hover {
+  background-color: #545454;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link{
+  font-size: 14px;
+  padding: 0.5rem 0;
 }
 
 .footer {
@@ -23,7 +41,7 @@ body {
 }
 
 .dataTables_wrapper{
-	width: 100%;
+  width: 100%;
     padding: 30px 0;
 }
 
@@ -50,3 +68,4 @@ body {
 .dropdown-submenu:hover>.dropdown-menu {
     display: block;
 }
+

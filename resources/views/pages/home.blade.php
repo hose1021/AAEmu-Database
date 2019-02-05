@@ -5,36 +5,70 @@
 @section('content')
 <!-- Page Content -->
 <div class="container">
-  <h1 class="mt-3">You are Welcome</h1>
-  <p>It's AAWeb for AAEmu private server database</p>
-  <ul class="list-group mb-3">
-      <li class="list-group-item d-flex justify-content-between lh-condensed">
-        <div>
-          <h6 class="my-0">Server status</h6>
-        </div>
-        @php
-    	    $ip = "94.249.167.67";
-    	    $port = "1237";
-    	    $online = '<h6 class="my-0"><span class="badge badge-success my-0">Online</span></h6>';
-    	    $offline = '<h6 class="my-0"><span class="badge badge-danger my-0">Offline</span></h6>';
-    	if (! $sock=@fsockopen($ip, $port, $num, $error, 0.25))
-    	    {echo "$offline";}
-    	else
-    	    {echo "$online";}
-        @endphp
-      </li>
-      <li class="list-group-item d-flex justify-content-between lh-condensed">
-        <div>
-          <h6 class="my-0">Discord</h6>
-          <small class="text-muted">Community Discord server</small>
-        </div>
-        <h6 class="my-0 text-success"><a class="btn btn-outline-success" href="https://discordapp.com/invite/X8xhJEd">Connect</a></h6>
-      </li>
-    </ul>
-    <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-        
+  <div class="py-4 text-center">
+    <h2>You are welcome</h2>
+    <p class="lead">This is AAEmu project. Created for players and developers.</p>
+  </div>
+  <div class="row">
+    <ul class="col-md-7 order-md-1">
+        <h4 class="mb-3">Server information</h4>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Server status</h6>
+          </div>
+          @php
+            $ip = "94.249.167.67";
+            $port = "1237";
+            $online = '<h6 class="my-0"><span class="badge badge-success my-0">Online</span></h6>';
+            $offline = '<h6 class="my-0"><span class="badge badge-danger my-0">Offline</span></h6>';
+        if (! $sock=@fsockopen($ip, $port, $num, $error, 0.25))
+            {echo "$offline";}
+        else
+            {echo "$online";}
+          @endphp
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Registered</h6>
+          </div>
+          <h6 class="my-0 text-success"><span class="badge badge-success my-0">{{ $users }}</span></h6>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Client</h6>
+            <small class="text-muted">v. 1.0.1</small>
+          </div>
+          <h6 class="my-0 text-success"><a class="btn btn-success btn-sm" href="https://mega.nz/#!rJEXTITL!0L-_iRLGyYmmZQgwrux2IOJtmFhwm9yT2B7fqQQMUJ0">Download</a></h6>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Game_pak</h6>
+            <small class="text-muted">extracted</small>
+          </div>
+          <h6 class="my-0 text-success"><a class="btn btn-primary btn-sm" href="https://aaemugit.tk/Naggerknife/AAEmu-Client">Open</a></h6>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Github Server</h6>
+            <small class="text-muted">Server github repo</small>
+          </div>
+          <h6 class="my-0 text-success"><a class="btn btn-primary btn-sm" href="https://github.com/atel0/AAEmu">Open</a></h6>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Github Web</h6>
+            <small class="text-muted">This web site github repo</small>
+          </div>
+          <h6 class="my-0 text-success"><a class="btn btn-primary btn-sm" href="https://github.com/hose1021/AAEmu-Database">Open</a></h6>
+        </li>
+      </ul>
+      <div class="list-group col-md-5 order-md-2 mb-5">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Server news</span>
+        </h4>
+        <iframe src="https://cl2.widgetbot.io/channels/479677351618281472/481782245087248400" height="500" width="100%"></iframe>
       </div>
+  </div>
 </div>
 <!-- /.container -->
 @stop
