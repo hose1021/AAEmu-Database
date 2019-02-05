@@ -125,6 +125,9 @@
                         <th>Icon</th>
                         <th>Название</th>
                         <th>Name</th>
+                        <th>Item lvl</th>
+                        <th>Price</th>
+                        <th>Honor</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -200,6 +203,18 @@
                     },
                     {
                         data: 'en_us',
+                        'defaultContent': "<i>error</i>"
+                    },
+                    {
+                        data:'level',
+                        'defaultContent': "<i>error</i>"
+                    },
+                    {
+                        data:'price',
+                        'defaultContent': "<i>error</i>"
+                    },
+                    {
+                        data:'honor_price',
                         'defaultContent': "<i>error</i>"
                     }
                 ],

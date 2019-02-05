@@ -9,6 +9,10 @@
     <h2>You are welcome</h2>
     <p class="lead">This is AAEmu project. Created for players and developers.</p>
   </div>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Hello guys!</h4>
+    <p><strong>@Hose</strong>, <strong>@Roddy</strong> and <strong>@Altaress</strong> working on the web site. Now we working on main design, full database in web site, and adding map in website. You can offer us something to add. We try to create something cool not like the rest. Just write what you would like to see on the site, we will take into account all your wishes and try to recreate them. Just join in our discord server and write all you what you would to see in <a href="https://discord.gg/7pJZpqb" class="alert-link">#public-chat</a>.</p>
+  </div>
   <div class="row">
     <ul class="col-md-7 order-md-1">
         <h4 class="mb-3">Server information</h4>

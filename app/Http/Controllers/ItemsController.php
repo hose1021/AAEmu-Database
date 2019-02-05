@@ -40,7 +40,7 @@ class ItemsController extends Controller
             if(false !== stream_resolve_include_path( public_path() . '/img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
                 $items[$i]['filename']='/icons/'.$items[$i]['filename'];
             else {
-                $items[$i]['filename']="empty.png";
+                $items[$i]['filename']="/empty.png";
             }
         }
         $items = [

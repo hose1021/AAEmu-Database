@@ -31,7 +31,7 @@ class ItemRepository
 
     public function getAll()
     {
-        return $this->item->setConnection('sqlite')->select('items.id', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename')
+        return $this->item->setConnection('sqlite')->select('items.id', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename', 'level', 'price', 'honor_price')
             ->leftJoin('icons', 'items.icon_id', '=', 'icons.id')
             ->leftJoin('localized_texts', 'localized_texts.idx', '=', 'items.id')
             ->where('localized_texts.tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->latest();
