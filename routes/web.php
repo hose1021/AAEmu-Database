@@ -31,4 +31,8 @@ Route::group(['prefix' => 'npcs'], function () {
 
 Auth::routes();
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('profile', 'Profile\ProfileController@view')->name('profile');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');

@@ -20,11 +20,12 @@ class CustomUserProvider extends EloquentUserProvider {
         $hashedValue = $user->getAuthPassword();
 
         if ($this->hasher->needsRehash($hashedValue) && $hashedValue === base64_encode(hash('sha256', $plain, true))) {
-            $user->password = bcrypt($plain);
+            $user->password = base64_encode(hash('sha256', $plain, true));
             $user->save();
         }
-
-        return $this->hasher->check($plain, $user->getAuthPassword());
+        if (base64_encode(hash('sha256', $plain, true)) === $user->getAuthPassword()) {
+            return true;
+        }
     }
 
 }

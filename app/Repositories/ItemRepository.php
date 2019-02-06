@@ -31,10 +31,10 @@ class ItemRepository
 
     public function getAll()
     {
-        return $this->item->setConnection('sqlite')->select('items.id', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename', 'level', 'price', 'honor_price')
-            ->leftJoin('icons', 'items.icon_id', '=', 'icons.id')
-            ->leftJoin('localized_texts', 'localized_texts.idx', '=', 'items.id')
-            ->where('localized_texts.tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->latest();
+        return $this->item->setConnection('sqlite')->select('items.id','localized_texts.idx', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename', 'level', 'price', 'honor_price', 'description')
+            ->leftJoin('icons', 'icons.id', '=', 'items.icon_id')
+            ->Join('localized_texts', 'items.id', '=', 'localized_texts.idx')
+            ->where('localized_texts.tbl_name', 'items')->where('ru', '<>', '')->where('tbl_column_name', 'name')->latest();
     }
 
     public function getAllForCategory($category_id)

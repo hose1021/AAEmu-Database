@@ -34,6 +34,7 @@ body {
 
 .footer {
   position: absolute;
+  bottom: 0;
   width: 100%;
   height: 60px; /* Set the fixed height of the footer here */
   line-height: 60px; /* Vertically center the text there */
@@ -69,3 +70,38 @@ body {
     display: block;
 }
 
+.items{
+  padding: .3rem;
+}
+
+.poster{
+    position:relative;
+    display: -webkit-inline-box;
+    height:57px;
+    width:57px;
+}
+.descr{
+    display:none;
+    margin-left: 50px;
+    padding: 10px;
+    margin-top: 3px;
+    background: #f3f3f3;
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);
+}
+
+.bottom-right{
+  position: absolute;
+  bottom: 0;
+  right: .4rem;
+  color: white;
+}
+
+.poster:hover .descr{
+    display: block;
+    position: absolute;
+    top: 57px;
+    z-index: 9999;
+    width: 300px;
+}
