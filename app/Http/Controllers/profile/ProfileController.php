@@ -26,6 +26,8 @@ class ProfileController extends Controller
     	while($k<count($user_info)){
     		for($i=0; $i<count($items['data']); $i++) { 
     			if ($items['data'][$i]['idx'] == $user_info[$k]['template_id']){
+    				$owner[$k]['id'] = $user_info[$k]['owner'];
+    				$owner[$k]['name'] = $user_info[$k]['name'];
     				$user_info[$k]['picture'] = substr($items['data'][$i]['filename'], 0, -4) . '.png';
     				$user_info[$k]['name_ru'] = $items['data'][$i]['ru'];
     				$user_info[$k]['name_en'] = $items['data'][$i]['en_us'];
@@ -35,15 +37,33 @@ class ProfileController extends Controller
     		}
     		$k++;
     	}
-        return view('auth.profile', ['user_info' => $user_info]);
+    	$owner=$this->unique_multidim_array($owner,'id');
+    	$owner=array_values($owner);
+        return view('auth.profile', ['user_info' => $user_info], ['owner' => $owner]);
     }
 
     public function UserProfile($user)
     {
-    	$data=DB::connection('mysql')->table('users')->select('items.template_id', 'items.count', 'items.slot_type', 'items.owner')
-    		->join('items', 'users.id', '=', 'items.owner')
-            ->where('users.id', $user)->orderby('items.template_id')->get();
+    	$data=DB::connection('mysql')->table('users')->select('items.template_id', 'items.count', 'items.slot_type', 'items.owner', 'characters.name')
+    		->join('characters', 'characters.account_id', '=', 'users.id')
+    		->join('items', 'items.owner', '=', 'characters.id')
+            ->where('users.id', $user)->orderby('items.owner')->get();
         return json_decode(json_encode($data, true), true);
     }
+
+    public function unique_multidim_array($array, $key) { 
+    $temp_array = array(); 
+    $i = 0; 
+    $key_array = array(); 
+    
+    foreach($array as $val) { 
+        if (!in_array($val[$key], $key_array)) { 
+            $key_array[$i] = $val[$key]; 
+            $temp_array[$i] = $val; 
+        } 
+        $i++; 
+    } 
+    return $temp_array; 
+	} 
 }
 
