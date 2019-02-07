@@ -76,14 +76,17 @@ body {
 
 .items{
   padding: .3rem;
+  width: 100%;
 }
 
 .poster{
-    position:relative;
+    position: relative;
     display: -webkit-inline-box;
-    height:57px;
-    width:57px;
+    background: url(/img/profile/item.png);
+    background-size: 110% 110%;
+    margin: -3px;
 }
+
 .descr{
     display:none;
     margin-left: 50px;
@@ -100,6 +103,8 @@ body {
   bottom: 0;
   right: .4rem;
   color: white;
+  margin-bottom: 2px;
+  font-size: 11px;
 }
 
 .poster:hover .descr{
@@ -113,3 +118,31 @@ body {
 #example_wrapper{
   margin-bottom: 50px;
 }
+
+.user-profile{
+  width: 100%;
+}
+
+.item-list{
+  position: absolute;
+  display: grid;
+  grid-column: 10;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+  color: #444;
+  top: 10.1%;
+  left: 38%;
+  width: 55%;
+}
+
+.item{
+  width: 5%;
+}
+
+.img-bg{
+  max-width: none;
+    min-width: auto;
+    min-height: auto;
+    width: 100%;
+    height: 100%;
+  }

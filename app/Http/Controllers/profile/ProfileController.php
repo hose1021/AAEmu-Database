@@ -44,10 +44,10 @@ class ProfileController extends Controller
 
     public function UserProfile($user)
     {
-    	$data=DB::connection('mysql')->table('users')->select('items.template_id', 'items.count', 'items.slot_type', 'items.owner', 'characters.name')
+    	$data=DB::connection('mysql')->table('users')->select('items.template_id', 'items.count', 'items.slot_type', 'items.owner', 'characters.name', 'items.slot')
     		->join('characters', 'characters.account_id', '=', 'users.id')
     		->join('items', 'items.owner', '=', 'characters.id')
-            ->where('users.id', $user)->orderby('items.owner')->get();
+            ->where('users.id', $user)->orderby('items.slot')->get();
         return json_decode(json_encode($data, true), true);
     }
 

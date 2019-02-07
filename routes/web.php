@@ -33,6 +33,6 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', 'Profile\ProfileController@view')->name('profile');
+    // Route::get('test', 'Profile\ProfileController@view');
 });
-
 Route::get('/home', 'HomeController@index')->name('home');
