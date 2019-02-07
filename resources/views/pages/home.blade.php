@@ -4,7 +4,7 @@
  
 @section('content')
 <!-- Page Content -->
-<div class="container">
+<div class="container container-bottom">
   <div class="py-4 text-center">
     <h2>You are welcome</h2>
     <p class="lead">This is AAEmu project. Created for players and developers.</p>

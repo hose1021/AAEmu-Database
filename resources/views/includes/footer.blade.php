@@ -1,4 +1,4 @@
-<footer class="navbar footer text-white bg-dark">
+<footer class="navbar footer text-white">
     <div class="container">
         <span>&copy; 2019 AAWeb &nbsp;&nbsp;&nbsp;&nbsp; Created by <a class="alert-link" href="https://github.com/hose1021">Hose</a> | <a href="https://github.com/Aftershocks59" class="alert-link">Arnaud</a></span>
         <span>Design by Roddy</span>
