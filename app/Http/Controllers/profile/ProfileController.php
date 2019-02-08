@@ -51,7 +51,7 @@ class ProfileController extends Controller
     	$data=DB::connection('mysql')->table('users')->select('items.template_id', 'items.count', 'items.slot_type', 'items.owner', 'characters.name', 'items.slot', 'money')
     		->join('characters', 'characters.account_id', '=', 'users.id')
     		->join('items', 'items.owner', '=', 'characters.id')
-            ->where('users.id', 55)->orderby('items.slot')->get();
+            ->where('users.id', $user)->orderby('items.slot')->get();
         return json_decode(json_encode($data, true), true);
     }
 

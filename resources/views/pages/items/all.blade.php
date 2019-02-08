@@ -120,7 +120,7 @@
                 </nav>
                 <table id="example" class="display" style="width:100%">
                     <thead>
-                    <tr>
+                    <tr class="table-secondary">
                         <th>Item ID</th>
                         <th>Icon</th>
                         <th>Название</th>
@@ -131,7 +131,7 @@
                     </tr>
                     </thead>
                     <tbody>
-
+                        
                     </tbody>
                 </table>
             </div>

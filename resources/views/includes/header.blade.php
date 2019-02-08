@@ -25,13 +25,16 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Community forum</a>
+                    <a href="https://boards.aaemu.pw" class="nav-link">Community forum</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-github"></i> Github</a>
+                    <a href="https://github.com/atel0/AAEmu" class="nav-link"><i class="fab fa-github"></i> Github</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-discord"></i> Discord</a>
+                    <a href="https://discord.gg/7pJZpqb" class="nav-link"><i class="fab fa-discord"></i> Discord</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('nightmode') }}" class="nav-link @if (session('isDark')) active @endif"> DARK ZONE</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

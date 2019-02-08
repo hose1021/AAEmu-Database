@@ -10,9 +10,11 @@ Route::group(['prefix' => 'items'], function () {
     Route::post('all', 'ItemsController@List')->name('post_all_items');
 });
 
+Route::get('/nightmode', 'ThemeController@switchModes')->name('nightmode');
+
 Route::get('/test', 'ItemsController@test');
 
-Route::get('/', 'WelcomeController@view');
+Route::get('/', 'WelcomeController@view')->name('home');
 
 Route::group(['prefix' => 'npcs'], function () {
     //All npcs
@@ -35,4 +37,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', 'Profile\ProfileController@view')->name('profile');
     // Route::get('test', 'Profile\ProfileController@view');
 });
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
