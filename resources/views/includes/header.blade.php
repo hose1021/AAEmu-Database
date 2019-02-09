@@ -34,6 +34,9 @@
                     <a href="https://discord.gg/7pJZpqb" class="nav-link"><i class="fab fa-discord"></i> Discord</a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('guide') }}" class="nav-link"><i class="fas fa-book"></i> Guide</a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('nightmode') }}" class="nav-link @if (session('isDark')) active @endif"> DARK ZONE</a>
                 </li>
             </ul>

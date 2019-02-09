@@ -6,52 +6,52 @@
 
 @section('content')
 <div class="container container-bottom">
-    <div class="row fill">
-        @for ($k = 0; $k < count($owner); $k++)
-        @php $m=0; @endphp
-        <div class="col-md-8 user-profile">
-            <div class="item-list">
-                @for($i=0;$i<count($user_info);$i++)
-                @if( array_key_exists("picture",$user_info[$i]) && $user_info[$i]['slot_type'] == 'Inventory' && $user_info[$i]['owner'] == $owner[$k]['id'])
-                <div class="poster">
-                    <img class="items" src="{{ asset('img/') }}{{ $user_info[$i]['picture'] }}">
-                    <div class="bottom-right">@if($user_info[$i]['count']>1){{ $user_info[$i]['count'] }}@endif</div>
-                    <div class="descr">
-                        <h6>{{ $user_info[$i]['name_ru'] }}</h6>
-                        <h6>{{ $user_info[$i]['name_en'] }}</h6>
-                        {{ $user_info[$i]['description'] }}
-                        Количество: {{ $user_info[$i]['count'] }}
-                    </div>
+<div class="center">
+    <h1>Select your character</h1>
+    <br>
+    @if ($characters != NULL)
+    @for ($i = 0; $i < count($characters); $i++)
+    <div class="span12 centered-text">
+            <a href="{{ route('character', ['id' => $characters[$i]['id']]) }}">
+            <div class="content">
+                <div class="name">
+                    <ul class="list">
+                        <li>
+                            <h1>{{ $characters[$i]['name'] }}</h1>
+                        </li>
+                        <li>
+                            <h6 class="text-muted">Level: {{ $characters[$i]['level'] }}</h6>
+                        </li>
+                    </ul>
                 </div>
-                @php $m++; @endphp
+                @if ($characters[$i]['race'] == 1 && $characters[$i]['gender'] == 1)
+                    <img src="{{ asset('img/profile/characters/race_1_1.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 1 && $characters[$i]['gender'] == 2)
+                    <img src="{{ asset('img/profile/characters/race_1_2.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 2 && $characters[$i]['gender'] == 1)
+                    <img src="{{ asset('img/profile/characters/race_2_1.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 2 && $characters[$i]['gender'] == 2)
+                    <img src="{{ asset('img/profile/characters/race_2_2.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 4 && $characters[$i]['gender'] == 1)
+                    <img src="{{ asset('img/profile/characters/race_4_1.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 4 && $characters[$i]['gender'] == 2)
+                    <img src="{{ asset('img/profile/characters/race_4_2.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 5 && $characters[$i]['gender'] == 1)
+                    <img src="{{ asset('img/profile/characters/race_5_1.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 5 && $characters[$i]['gender'] == 2)
+                    <img src="{{ asset('img/profile/characters/race_5_2.png') }}" class="character_icon" alt="">
                 @endif
-                @endfor
-                @for($t=0;$t<(100-$m);$t++)
-                <img src="{{ asset('img/') }}/profile/item.png" width="90%" alt="">
-                @endfor
             </div>
-                @if (count($owner[$k]['money'])==3)
-                    <div class="money">
-                        @for ($m=0; $m < count($owner[$k]['money']); $m++)
-                            <span class="money-value">{{$owner[$k]['money'][$m]}}</span>
-                        @endfor
-                    </div>
-                @elseif(count($owner[$k]['money'])==2)
-                    <div class="two">
-                        @for ($m=0; $m < count($owner[$k]['money']); $m++)
-                            <span class="money-value">{{$owner[$k]['money'][$m]}}</span>
-                        @endfor
-                    </div>
-                @elseif(count($owner[$k]['money'])==1)
-                    <div class="one">
-                        @for ($m=0; $m < count($owner[$k]['money']); $m++)
-                            <span class="money-value">{{$owner[$k]['money'][$m]}}</span>
-                        @endfor
-                    </div>
-                @endif
-            <img class="img-bg" src="/img/profile/image.png" alt="">
+            <img src="{{ asset('img/profile/image 52.png') }}" class="select_bg" alt="">
+            </a>
         </div>
-        @endfor
+    @endfor
+    @else
+    <div class="span12 centered-text">
+        <h3 style="color: red;">Please create character</h3>
     </div>
+    @endif
+</div>
+
 </div>
 @endsection

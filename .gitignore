@@ -4,3 +4,5 @@ db/decrypted.sqlite3
 public/icons
 .idea/
 reg/
+public/guide/
+resources/views/pages/guide.blade.php

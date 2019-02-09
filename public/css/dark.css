@@ -10756,3 +10756,53 @@ html {
   label, .paginate_button, .dataTables_info{
     color:white !important;
   }
+
+
+  .content{
+    display: -webkit-inline-box;
+    position: absolute;
+    margin-left: 1rem;
+    z-index: 1;
+  }
+
+  .center{
+    position: sticky;
+    top: 50%;
+    text-align: center !important;
+  }
+
+  .name{
+    display: -webkit-inline-box;
+    position: absolute;
+    margin-left: 6rem;
+    width: 100%;
+  }
+  
+  .list{
+    padding: 0;
+    list-style-type: none;
+    font-family: Comic Sans MS;
+  }
+
+  .character_icon, .select_bg {
+    opacity: 0.7;
+  }
+
+  .list > li > h1{
+    color: white;
+    float: left;
+    margin-bottom: 0;
+    opacity: 0.7;
+  }
+
+  .list > li > h6{
+    color: white !important;
+    float: left;
+    opacity: 0.7;
+    line-height: normal;
+  }
+
+  .span12 > a:hover > .content > .character_icon, .span12 > a:hover > .select_bg,
+  a:hover > .content > .name > .list > li > h1{
+    opacity: 1;
+  }

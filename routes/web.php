@@ -33,8 +33,15 @@ Route::group(['prefix' => 'npcs'], function () {
 
 Auth::routes();
 
+// PROFILE ROUTE
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', 'Profile\ProfileController@view')->name('profile');
-    // Route::get('test', 'Profile\ProfileController@view');
+    Route::get('character/{id}', 'Profile\ProfileController@character')->name('character');
 });
-Route::get('/home', 'HomeController@index');
+
+// GUIDE
+Route::get('/guide', function()
+{
+    return view('pages.guide');
+})->name('guide');

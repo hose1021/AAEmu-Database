@@ -171,3 +171,55 @@ body {
     color: #684A18;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
+
+  .content{
+    display: -webkit-inline-box;
+    position: absolute;
+    margin-left: 1rem;
+    z-index: 1;
+  }
+
+  .center{
+    position: sticky;
+    top: 50%;
+    text-align: center !important;
+  }
+
+  .name{
+    display: -webkit-inline-box;
+    position: absolute;
+    margin-left: 6rem;
+    width: 100%;
+  }
+  
+  .list{
+    padding: 0;
+    margin-left: -1em;
+    list-style-type: none;
+    font-family: Comic Sans MS;
+  }
+
+  .character_icon, .select_bg {
+    opacity: 0.7;
+  }
+
+  .list > li > h1{
+    font-size: 22px;
+    margin-top: 1em;
+    color: black;
+    float: left;
+    margin-bottom: 0;
+    opacity: 0.7;
+  }
+
+  .list > li > h6{
+    color: black;
+    float: left;
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  .span12 > a:hover > .content > .character_icon, .span12 > a:hover > .select_bg,
+  a:hover > .content > .name > .list > li > h1{
+    opacity: 1;
+  }

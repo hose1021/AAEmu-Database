@@ -1,6 +1,6 @@
 <title>@yield('title')</title>
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<link rel="icon" type="image/png" href="{{ asset('/img/logo_ico.png') }}" />
+<link rel="icon" type="image/png" href="{{ asset('/img/favicon.ico') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.css') }}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
       integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
