@@ -10780,6 +10780,7 @@ html {
   
   .list{
     padding: 0;
+    margin-left: -1em;
     list-style-type: none;
     font-family: Comic Sans MS;
   }
@@ -10789,6 +10790,8 @@ html {
   }
 
   .list > li > h1{
+    font-size: 22px;
+    margin-top: 1em;
     color: white;
     float: left;
     margin-bottom: 0;
@@ -10798,6 +10801,7 @@ html {
   .list > li > h6{
     color: white !important;
     float: left;
+    font-size: 16px;
     opacity: 0.7;
     line-height: normal;
   }
@@ -10805,4 +10809,100 @@ html {
   .span12 > a:hover > .content > .character_icon, .span12 > a:hover > .select_bg,
   a:hover > .content > .name > .list > li > h1{
     opacity: 1;
+  }
+
+  .location{
+    margin-bottom: 0;
+    color: black;
+    text-align: -webkit-left;
+    width: 35%;
+    margin: 0 auto;
+    color: white !important;
+    font-size: 16px;
+    opacity: 0.7; font-family: Comic Sans MS;
+  }
+
+  .text-decoration-none:hover{
+    text-decoration:none;
+  }
+
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-row-gap: 1ch;
+  }
+
+  .text-decoration-none:hover{
+    text-decoration:none;
+  }
+
+  .slider{
+    margin-bottom: 2rem;
+  }
+
+  .black{
+    position: relative;
+  }
+
+  .black > .text-desc{
+    color: #d8dbdf;
+    font-weight: bold;
+  }
+
+  .black > .my-0{
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+
+  .slider-items {
+    position: relative;
+  }
+
+  .slider-items:before{
+    position: absolute;
+    content:"";
+    background-color: black;
+    opacity: .6;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+
+  .slider-items{
+    text-align: left;
+    padding: 3ch;
+    border: 1px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .tab-pane{
+    height: 100%;
+    background-size: cover;
+    border: 1px solid #222;
+    border-radius: 0.25rem;
+  }
+
+  .desc-content{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 5%;
+    width: 95%;
+  }
+
+  .nav-pills > .active:after {
+    content: '';
+    height: 60%;
+    width: 10px;
+    position: absolute;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right,rgba(255,0,0,0) 50%, white 50%);
+    left: -5px;
+    top: 20%;
   }

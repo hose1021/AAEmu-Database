@@ -2,40 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\ItemRepository;
+use Illuminate\Support\Facades\DB;
+use Yajra\Datatables\Datatables;
 
 class ItemsController extends Controller
 {
-
-
-    /**
-     * @var ItemRepository
-     */
-    private $itemRepository;
-
-    public function __construct(ItemRepository $itemRepository)
-    {
-        $this->itemRepository = $itemRepository;
-    }
-
     public function view()
     {
         return view('pages.items.all');
     }
 
-    public function ShowItemByCategory($category)
+    public function getAll()
     {
-        $items = $this->itemRepository->getAllForCategory($category)->get()->all();
-        $items = [
-            'data' => $items
-        ];
-        return json_encode($items);
+        $result = DB::connection('sqlite')->table('items')->select('items.id','localized_texts.idx', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename', 'level', 'price', 'honor_price')
+                    ->Join('icons', 'icons.id', '=', 'items.icon_id')
+                    ->Join('localized_texts', 'items.id', '=', 'localized_texts.idx')
+                    ->where('localized_texts.tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->latest()->get();
+        $result = json_decode(json_encode($result, true), true);
+        $result = $this->List($result);
+        return Datatables::of($result)->make(true);
     }
 
-    public function List()
+    public function getAll_2()
     {
-        $items = $this->itemRepository->getAll()->get();
-        $items = json_decode(json_encode($items, true), true);
+        $result = DB::connection('sqlite')->table('items')->select('items.id','localized_texts.idx', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename', 'level', 'price', 'honor_price')
+                    ->Join('icons', 'icons.id', '=', 'items.icon_id')
+                    ->Join('localized_texts', 'item s.id', '=', 'localized_texts.idx')
+                    ->where('localized_texts.tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->latest()->get();
+        $result = json_decode(json_encode($result, true), true);
+        $result = $this->List($result);
+        return $result;
+    }
+
+    public function List($items)
+    {
         for ($i=0;$i<count($items);$i++){
             if(false !== stream_resolve_include_path( public_path() . '/img/icons/' . substr($items[$i]['filename'], 0, -4) . '.png'))
                 $items[$i]['filename']='/icons/'.$items[$i]['filename'];
@@ -43,19 +43,15 @@ class ItemsController extends Controller
                 $items[$i]['filename']="/empty.png";
             }
         }
-        $items = [
-            'data' => $items
-        ];
         return $items;
     }
 
-    public function test()
+    public function Items_desc()
     {
-        // $item = DB::connection('sqlite')->table('items')->select('items.id', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename')
-        //     ->leftJoin('icons', 'items.icon_id', '=', 'icons.id')
-        //     ->leftJoin('localized_texts', 'localized_texts.idx', '=', 'items.id')
-        //     ->where('localized_texts.tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->latest();
-        // // $users = DB::connection('mysql')->table('users')->select('username')->get();
+        $desc = DB::connection('sqlite')->table('items')->select('localized_texts.idx', 'localized_texts.en_us','localized_texts.ru')
+                     ->Join('localized_texts', 'items.id', '=', 'localized_texts.idx')
+                     ->where('localized_texts.tbl_name', 'items')->where('tbl_column_name', 'description')->latest()->get();
+        return $desc;
     }
 }
 

@@ -12,7 +12,7 @@
     @if ($characters != NULL)
     @for ($i = 0; $i < count($characters); $i++)
     <div class="span12 centered-text">
-            <a href="{{ route('character', ['id' => $characters[$i]['id']]) }}">
+            <a class="text-decoration-none" href="{{ route('character', ['id' => $characters[$i]['id']]) }}">
             <div class="content">
                 <div class="name">
                     <ul class="list">
@@ -28,13 +28,13 @@
                     <img src="{{ asset('img/profile/characters/race_1_1.png') }}" class="character_icon" alt="">
                 @elseif ($characters[$i]['race'] == 1 && $characters[$i]['gender'] == 2)
                     <img src="{{ asset('img/profile/characters/race_1_2.png') }}" class="character_icon" alt="">
-                @elseif ($characters[$i]['race'] == 2 && $characters[$i]['gender'] == 1)
-                    <img src="{{ asset('img/profile/characters/race_2_1.png') }}" class="character_icon" alt="">
-                @elseif ($characters[$i]['race'] == 2 && $characters[$i]['gender'] == 2)
-                    <img src="{{ asset('img/profile/characters/race_2_2.png') }}" class="character_icon" alt="">
                 @elseif ($characters[$i]['race'] == 4 && $characters[$i]['gender'] == 1)
-                    <img src="{{ asset('img/profile/characters/race_4_1.png') }}" class="character_icon" alt="">
+                    <img src="{{ asset('img/profile/characters/race_2_1.png') }}" class="character_icon" alt="">
                 @elseif ($characters[$i]['race'] == 4 && $characters[$i]['gender'] == 2)
+                    <img src="{{ asset('img/profile/characters/race_2_2.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 6 && $characters[$i]['gender'] == 1)
+                    <img src="{{ asset('img/profile/characters/race_4_1.png') }}" class="character_icon" alt="">
+                @elseif ($characters[$i]['race'] == 6 && $characters[$i]['gender'] == 2)
                     <img src="{{ asset('img/profile/characters/race_4_2.png') }}" class="character_icon" alt="">
                 @elseif ($characters[$i]['race'] == 5 && $characters[$i]['gender'] == 1)
                     <img src="{{ asset('img/profile/characters/race_5_1.png') }}" class="character_icon" alt="">
@@ -43,8 +43,18 @@
                 @endif
             </div>
             <img src="{{ asset('img/profile/image 52.png') }}" class="select_bg" alt="">
+            <ul class="list location" style="margin-bottom: 0;">
+                <li>
+                    <span>Fraction: {{$faction_name[$i][0]['ru']}} / {{$faction_name[$i][0]['en_us']}}</span>
+                </li>
+                <li>
+                    <span>Location: {{$zone_id[$i][0]['ru']}} / {{$zone_id[$i][0]['en_us']}}</span>
+                </li>
+            </ul>
             </a>
         </div>
+        <br>
+        <br>
     @endfor
     @else
     <div class="span12 centered-text">

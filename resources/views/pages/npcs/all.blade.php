@@ -3,38 +3,42 @@
 @section('title', 'Npcs all | AAWeb')
 
 @section('content')
-    <div class="row" style="margin: 0">
-        <table id="example" class="display" style="width:100%">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Level</th>
-                <th>Grade</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($npcs as $npc)
-                <tr>
-                    <td>{{ $npc['id'] }}</td>
-                    <td>{{$npc['en_us']}}</td>
-                    <td>{{$npc['level']}}</td>
-                    <td>{{$npc['npc_grade_id']}}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-    </div>
-@endsection
+    <main role="main">
+        <div class="container container-bottom">
+            <div class="row" style="margin: 0">
+                <table id="npcs-table" class="display" style="width:100%">
+                    <thead>
+                    <tr class="table-secondary">
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Name</th>
+                        <th>Level</th>
+                        <th>Grade ID</th>
+                        <th>Trader</th>
+                        <th>Honor points</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </main>
+@stop
 
 @section('javascripts')
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable( {
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Russian.json"
-            }
-        } );
-    });
-</script>
+    <script type="text/javascript">
+        $(function() {
+            $('#npcs-table').DataTable({
+                ajax: {url:"{!! asset('db/npcs.json') !!}",dataSrc:""},
+                columns: [
+                    { data: 'id', name: 'id' },
+                    { data: 'ru', name: 'ru' },
+                    { data: 'en_us', name: 'en_us' },
+                    { data: 'level', name: 'level' },
+                    { data: 'npc_grade_id', name: 'npc_grade_id' },
+                    { data: 'trader', name: 'trader' },
+                    { data: 'honor_point', name: 'honor_point' },
+                ],
+            });
+        });
+    </script>
 @endsection

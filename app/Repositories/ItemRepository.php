@@ -1,18 +1,13 @@
 <?php
 
-
 namespace App\Repositories;
 
-use App\Models\Item;
 use App\Models\ItemCategory;
 use App\Models\localizedText;
+use Yajra\Datatables\Datatables;
 
 class ItemRepository
 {
-    /**
-     * @var Item
-     */
-    private $item;
     /**
      * @var ItemCategory
      */
@@ -22,19 +17,10 @@ class ItemRepository
      */
     private $localizedText;
 
-    public function __construct(Item $item, ItemCategory $category, localizedText $localizedText)
+    public function __construct(ItemCategory $category, localizedText $localizedText)
     {
-        $this->item = $item;
         $this->category = $category;
         $this->localizedText = $localizedText;
-    }
-
-    public function getAll()
-    {
-        return $this->item->setConnection('sqlite')->select('items.id','localized_texts.idx', 'localized_texts.en_us','localized_texts.ru', 'items.level', 'icons.filename', 'level', 'price', 'honor_price', 'description')
-            ->leftJoin('icons', 'icons.id', '=', 'items.icon_id')
-            ->Join('localized_texts', 'items.id', '=', 'localized_texts.idx')
-            ->where('localized_texts.tbl_name', 'items')->where('en_us', '<>', '')->where('tbl_column_name', 'name')->latest();
     }
 
     public function getAllForCategory($category_id)

@@ -4,35 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\Datatables\Datatables;
 
 class NpcsController extends Controller
 {
     public function view()
     {
-
-    }
-
-    /**
-     * @param int $gradeId
-     * @param int $zoneId
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function npcs(int $gradeId = null, int $zoneId = null)
-    {
-        $npcs = $this->list($gradeId, $zoneId);
-        return view('pages/npcs/all', compact('npcs'));
-    }
-
-    public function travel()
-    {
-        $npcs = $this->List(null, null, 1);
-        return view('pages/npcs/all', compact('npcs'));
-    }
-
-    public function battlepets()
-    {
-        $npcs = $this->List(null, null, 2);
-        return view('pages/npcs/all', compact('npcs'));
+        return view('pages.npcs.all');
     }
 
     /**
@@ -41,27 +19,13 @@ class NpcsController extends Controller
      * @param int|null $slotEquip
      * @return mixed
      */
-    private function List(int $grade = null, int $zoneId = null, int $slotEquip = null)
+
+    public function List()
     {
-        $data = DB::table('npcs')
-            ->select('npcs.id', 'npcs.level', 'npcs.npc_grade_id', 'en_us', 'ru')
-            ->leftJoin('localized_texts', 'localized_texts.idx', '=', 'npcs.id')
-            ->where('tbl_name', 'npcs')->where('en', '<>', '');
-
-        if (!is_null($slotEquip) && is_numeric($slotEquip)) {
-            $data->where('mate_equip_slot_pack_id', '=', $slotEquip);
-        }
-
-        if (!is_null($grade) && is_numeric($grade)) {
-            $data->where('npc_grade_id', '=', $grade);
-        }
-
-        if (!is_null($zoneId) && is_numeric($zoneId)) {
-            //$data->leftJoin('') //left join ou parsing .dat (Game.pak => npc_data / sextant_data)
-        }
-
-        $data = $data->get();
-        return json_decode(json_encode($data, true), true);
+        $result = DB::connection('sqlite')->table('npcs')->select('npcs.id', 'npcs.level', 'npcs.npc_grade_id', 'localized_texts.en_us', 'localized_texts.ru', 'npcs.trader', 'npcs.honor_point')
+                    ->Join('localized_texts', 'localized_texts.idx', '=', 'npcs.id')
+                    ->where('localized_texts.tbl_name', 'npcs')->where('localized_texts.en_us', '<>', '')->get();
+        return Datatables::of($result)->make(true);
     }
 
 }
