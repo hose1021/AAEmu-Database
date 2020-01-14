@@ -1,4 +1,5 @@
-# ![AAEmu](https://boards.aaemu.pw/assets/files/2018-10-11/1539288486-150348-aaemu-blank-text.png)
+# ![AAEmu](https://boards.aaemu.pw/assets/files/2018-10-11/1539288486-150348-aaemu-blank-text.png)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhose1021%2FAAEmu-Database.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhose1021%2FAAEmu-Database?ref=badge_shield)
+
 
 __Open source web-site based on Laravel for ArcheAge__
 [![Chat on Discord](https://img.shields.io/discord/479677351618281472.svg?colorB=%237289da&label=Discord&logo=Discord&style=flat-square)](https://discord.gg/X8xhJEd)
@@ -39,3 +40,6 @@ Yes you can! Contributions are welcomed provided that they comply with our [Cont
 
 	You should have received a copy of the GNU Lesser General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhose1021%2FAAEmu-Database.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhose1021%2FAAEmu-Database?ref=badge_large)
